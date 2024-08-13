@@ -21,6 +21,7 @@ public class ValidateCurrency {
         if (sign == null || sign.isBlank()) {
             throw new IncorrectParameterException("Incorrect currency parameter sign");
         }
+        validateCurrencyCode(code);
     }
 
     public static void validateCurrencyCode(String code) {

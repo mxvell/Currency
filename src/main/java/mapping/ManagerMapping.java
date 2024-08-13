@@ -2,7 +2,10 @@ package mapping;
 
 import dto.CurrencyRequestDTO;
 import dto.CurrencyResponseDTO;
+import dto.ExchangeRateRequestDTO;
+import dto.ExchangeRateResponseDTO;
 import model.Currency;
+import model.ExchangeRate;
 import org.modelmapper.ModelMapper;
 
 public class ManagerMapping {
@@ -21,4 +24,10 @@ public class ManagerMapping {
         return modelMapper.map(currencyRequestDTO, Currency.class);
      }
 
+     public static ExchangeRateResponseDTO convertToDto(ExchangeRate exchangeRate){
+        return modelMapper.map(exchangeRate, ExchangeRateResponseDTO.class);
+     }
+     public static ExchangeRate convertToEntity(ExchangeRateRequestDTO exchangeRateRequestDTO){
+        return modelMapper.map(exchangeRateRequestDTO, ExchangeRate.class);
+     }
 }
